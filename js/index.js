@@ -2,10 +2,10 @@ let currentPage = 0;
 let totalPages = 0;
 const baseUrl = "http://localhost:8090/getBlogPosts?page="
 const mainWrapper = document.getElementById("main-wrapper");
-const contentWrapper = document.getElementById("content-wrapper")
-const firstPageButton = document.getElementById("fp-button")
-const prevButton = document.getElementById("prev-button")
-const nextButton = document.getElementById("next-button")
+const contentWrapper = document.getElementById("main-content")
+// const firstPageButton = document.getElementById("fp-button")
+// const prevButton = document.getElementById("prev-button")
+// const nextButton = document.getElementById("next-button")
 
 async function getPosts(page) {
     console.log("page", currentPage)
@@ -28,19 +28,20 @@ async function getPosts(page) {
         });
 
         totalPages = data.totalPages;
+        console.log("totalPages: " + totalPages);
 
-        if (currentPage > 0) {
-            console.log("current page", currentPage)
-            prevButton.disabled = false
-            firstPageButton.disabled = false
-        } else {
-            firstPageButton.disabled = true
-            prevButton.disabled = true
-        }
+        // if (currentPage > 0) {
+        //     console.log("current page", currentPage)
+        //     prevButton.disabled = false
+        //     firstPageButton.disabled = false
+        // } else {
+        //     firstPageButton.disabled = true
+        //     prevButton.disabled = true
+        // }
 
-        if (currentPage == totalPages) {
-            nextButton.disabled = true
-        }
+        // if (currentPage == totalPages) {
+        //     nextButton.disabled = true
+        // }
 
 
     } catch (error) {
@@ -69,10 +70,10 @@ function createTitleAndMetaSection(blogPost) {
 
     // Post image
     const figureTag = document.createElement("figure")
-    const postImage = document.createElement("img")
-    postImage.className = "title-img"
-    postImage.src = blogPost.postImage
-    figureTag.appendChild(postImage)
+    const blogPostProfileImage = document.createElement("img")
+    blogPostProfileImage.className = "title-img"
+    blogPostProfileImage.src = blogPost.profileImage
+    figureTag.appendChild(blogPostProfileImage)
 
     // Title and The Date
     const title = document.createElement("h2")
@@ -141,7 +142,6 @@ function createContentSection(blogPost) {
     const content = document.createElement("div")
     const contentList = blogPost.content
 
-    // console.log(contentList)
     for (i = 0; i < contentList.length; i++) {
         const p = document.createElement("p")
         p.innerHTML = contentList[i]
@@ -165,23 +165,23 @@ function createMoodAndTagsSection(blogPost) {
 }
 
 // Handlers para os botões
-firstPageButton.addEventListener('click', () => {
-    if(currentPage > 0) {
-        currentPage = 0;
-        getPosts(currentPage);
-    }
-});
+// firstPageButton.addEventListener('click', () => {
+//     if(currentPage > 0) {
+//         currentPage = 0;
+//         getPosts(currentPage);
+//     }
+// });
 
-prevButton.addEventListener('click', () => {
-    if(currentPage > 0) {
-        currentPage--;
-        getPosts(currentPage);
-    }
-});
+// prevButton.addEventListener('click', () => {
+//     if(currentPage > 0) {
+//         currentPage--;
+//         getPosts(currentPage);
+//     }
+// });
 
-nextButton.addEventListener('click', () => {
-    currentPage++;
-    getPosts(currentPage);
-});
+// nextButton.addEventListener('click', () => {
+//     currentPage++;
+//     getPosts(currentPage);
+// });
 
 getPosts(currentPage)

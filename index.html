@@ -5,20 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Landing Page</title>
+    <title>Content Hub</title>
 </head>
-
+<!-- https://www.mongodb.com/developer/products/atlas/atlas-search-java-server/ -->
 <body>
+    <header>Header</header>
     <div id="main-wrapper">
-        <div id="buttons-wrapper">
-            <button id="prev-button" class="btn" disabled>Previous</button>
-            <button id="fp-button" class="btn" disabled>First page</button>
-            <button id="next-button" class="btn">Next</button>
-        </div>
-        <div id="content-wrapper">
-
+        <aside id="sidebar">sidebar</aside>
+        <div id="article-wrapper">
+            <!-- <div id="buttons-wrapper">
+                <button id="prev-button" class="btn" disabled>Previous</button>
+                <button id="fp-button" class="btn" disabled>First page</button>
+                <button id="next-button" class="btn">Next</button>
+            </div> -->
+            <div id="main-container">
+                <div id="main-content"></div>
+                <aside id="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias similique ratione tenetur nemo iste illo aperiam non aliquid autem quis quod vero aspernatur possimus dicta architecto asperiores officiis, praesentium ad.</aside>
+            </div>
         </div>
     </div>
+    <footer>footer</footer>
     <script src="./js/index.js"></script>
 </body>
 
