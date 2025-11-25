@@ -1,4 +1,4 @@
-export function AsoiafList() {
+export default function AsoiafList() {
   return (
     <ul>
       <li>A Game of Thrones</li>
