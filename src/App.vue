@@ -5,8 +5,8 @@ import Hero from './components/Hero.vue';
 </script>
 
 <template>
-  <Header />
-  <Hero />
+    <Header />
+    <Hero />
 </template>
 
 <style scoped></style>

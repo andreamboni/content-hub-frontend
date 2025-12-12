@@ -1,34 +1,23 @@
 <script setup>
-
-
-
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Content hub</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Feed</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Notes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Library</a>
-          </li>
+  <header class="header">
+    <div class="header-wrapper">
+      <div class="nav-wrapper">
+        <span class="site-name">mine.hub</span>
+        <ul class="header-menu">
+          <li><a href="#">.feed</a></li>
+          <li><a href="#">.notes</a></li>
+          <li><a href="#">.library</a></li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+      </div>
+      <div class="search-wrapper">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="search" class="search-input" />
+        </div>
       </div>
     </div>
-  </nav>
+  </header>
 </template>
